@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  # labels of deployemnt resource
+  labels:
+    app: nginx
+    tier: frontend
+    purpose: deployment
+spec:
+  replicas: {{ .Values.deployment.replicas }}     #assume that this will change
+  selector:
+  # As we have many pods ,we should give what labels the deployment to match
+    matchLabels:
+      app: nginx
+      tier: frontend
+      purpose: deployment
+  # pod template
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+        purpose: deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:{{ .Values.deployment.imageVersion }}  #image version frequently changes
+        ports:
+        - containerPort: 80
