@@ -2,4 +2,4 @@ apiVersion: v2
 name: nginx
 version: 1.0.0  # this is chart version
 description: This is nginx deployment
-appVersion: 1.2.0  # this is nginx app version
+appVersion: 1.2.0  # Version of the application. This is just for informational only. we can give any number.
