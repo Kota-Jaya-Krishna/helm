@@ -1,5 +1,5 @@
 deployment:
   replicas: 3
-  imageVersion: stable-bookworm-perl    #	Version of the container image
+  imageVersion: latest    #	Version of the container image
 service:
   nodePort: 30007
